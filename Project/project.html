@@ -140,11 +140,11 @@
                         <!-- Bagian Form Contact -->
                         <div class="form-section">
                             <form id="contact-form">
-                                <input type="text" id="name" placeholder="Nama Lengkap" required>
-                                <input type="email" id="email" placeholder="Email" required>
-                                <textarea id="message" placeholder="Pesan Anda" required></textarea>
+                                <input type="text" id="name" name="name" placeholder="Nama Lengkap" required>
+                                <input type="email" id="email" name="email" placeholder="Email" required>
+                                <textarea id="message" name="message" placeholder="Pesan Anda" required></textarea>
                                 <button type="submit">Kirim</button>
-                            </form>
+                            </form>                            
                         </div>
                     </div>
                 </div>
@@ -158,14 +158,14 @@
         document.getElementById("contact-form").addEventListener("submit", async function (event) {
             event.preventDefault();
         
-            const form = document.querySelector("#myForm");
+            const form = document.querySelector("#contact-form");
             const formData = new FormData(form);
-        
+
             const data = {
-              to:"zahrazahraputri57@gmail.com",
-              name: formData.get("name"),
-              subject: formData.get("subject"),
-              text: formData.get("text"),
+            to: "zahrazahraputri57@gmail.com",
+            name: formData.get("name"),
+            subject: "Pesan dari Portofolio", 
+            text: formData.get("message"),
             };
         
             try {
